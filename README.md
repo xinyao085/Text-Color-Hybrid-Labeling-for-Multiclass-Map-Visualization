@@ -6,7 +6,7 @@ presented at [The 18th International Symposium on Visual Information Communicati
 
 ## Citation
 
-If you use the results in new projects or apply them in a different context, we would appreciate a citation:
+If this work contributes to your research or is reused in other projects, we would appreciate a citation:
 
 > Xinyao Chen, Xinyuan Zhang, Teng Ma, Lingyun Yu, and Yu Liu. 2025.  
 > *Text-Color Hybrid Labeling for Multiclass Map Visualization: A Comparative Evaluation of Four Annotation Strategies*.  
