@@ -4,6 +4,19 @@ This repository contains the datasets, figures, and source code for the paper
 **“Text-Color-Hybrid Labeling for Multiclass Map Visualization”**,  
 presented at [The 18th International Symposium on Visual Information Communication and Interaction (VINCI 2025)](https://vinci2025.games.cg.jku.at/).
 
+## Citation
+
+If you use the results in new projects or apply them in a different context, we would appreciate a citation:
+
+> Xinyao Chen, Xinyuan Zhang, Teng Ma, Lingyun Yu, and Yu Liu. 2025.  
+> *Text-Color Hybrid Labeling for Multiclass Map Visualization: A Comparative Evaluation of Four Annotation Strategies*.  
+> In **Proceedings of the 18th International Symposium on Visual Information Communication and Interaction (VINCI ’25)**.  
+> Association for Computing Machinery, New York, NY, USA, Article 14, 1–8.  
+> https://doi.org/10.1145/3769534.3769610
+
+The full paper is available at:  
+https://dl.acm.org/doi/full/10.1145/3769534.3769610
+
 ---
 
 ## 📂 Repository Structure
