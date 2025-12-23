@@ -14,9 +14,6 @@ If this work contributes to your research or is reused in other projects, we wou
 > Association for Computing Machinery, New York, NY, USA, Article 14, 1–8.  
 > https://doi.org/10.1145/3769534.3769610
 
-The full paper is available at:  
-https://dl.acm.org/doi/full/10.1145/3769534.3769610
-
 ---
 
 ## 📂 Repository Structure
