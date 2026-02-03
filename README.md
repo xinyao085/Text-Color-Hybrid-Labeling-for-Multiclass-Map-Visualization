@@ -16,13 +16,7 @@ If this work contributes to your research or is reused in other projects, we wou
 
 ---
 
-## 📂 Repository Structure
-
-- **Figures/**Contains generated images used in the experiments and examples.
-  - `M7_NoLegend.png`: Original input map without legend
-  - `Output__M7_NoLegend_black.png`: Map with black word clouds
-  - `Output__M7_NoLegend_white.png`: Map with white word clouds
-  - `Output__M7_NoLegend_colored.png`: Map with colored word clouds
+## Implementation
 
 Our method takes **`M7_NoLegend.png`** as input and generates word-cloud enhanced maps, including
 **`Output__M7_NoLegend_black.png`** and **`Output__M7_NoLegend_white.png`**.
@@ -40,6 +34,17 @@ Our method takes **`M7_NoLegend.png`** as input and generates word-cloud enhance
 #### White word clouds
 
 ![Map with white word clouds](Figures/Output__M7_NoLegend_white.png)
+
+---
+
+## 📂 Repository Structure
+
+- **Figures/**Contains generated images used in the experiments and examples.
+  - `M7_NoLegend.png`: Original input map without legend
+  - `Output__M7_NoLegend_black.png`: Map with black word clouds
+  - `Output__M7_NoLegend_white.png`: Map with white word clouds
+  - `Output__M7_NoLegend_colored.png`: Map with colored word clouds
+
 
 - **sample.ipynb**Example notebook demonstrating how to run the labeling pipeline on sample data.
 - **README.md**
