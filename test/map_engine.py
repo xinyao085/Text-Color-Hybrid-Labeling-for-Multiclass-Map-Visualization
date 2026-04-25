@@ -4,20 +4,6 @@ import geopandas as gpd
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 import matplotlib.patches as mpatches
-from pyproj import Geod
-
-_GEOD = Geod(ellps="WGS84")
-
-def _geodesic_area(geom):
-    """计算几何体的大地测量面积（平方米），支持 Polygon 和 MultiPolygon。"""
-    if geom is None or geom.is_empty:
-        return 0.0
-    if geom.geom_type == "Polygon":
-        area, _ = _GEOD.geometry_area_perimeter(geom)
-        return abs(area)
-    # MultiPolygon：各部分面积求和
-    return sum(abs(_GEOD.geometry_area_perimeter(p)[0]) for p in geom.geoms)
-
 
 def generate_land_use_map(
     geojson_path,
@@ -55,29 +41,6 @@ def generate_land_use_map(
     gdf_plot["plot_category"] = gdf_plot[category_col].apply(
         lambda x: x if x in top_categories else "OTHER"
     )
-
-    # 合并相邻同类地块：dissolve 把同类相邻多边形合并为一个，explode 再拆成单独多边形
-    print("正在合并相邻同类地块（dissolve）...")
-    gdf_dissolved = (
-        gdf_plot[["plot_category", "geometry"]]
-        .dissolve(by="plot_category")
-        .reset_index()
-        .explode(index_parts=False)
-        .reset_index(drop=True)
-    )
-
-    # 清理 dissolve/explode 后产生的空或无效几何体
-    gdf_dissolved = gdf_dissolved[
-        ~gdf_dissolved.geometry.is_empty & gdf_dissolved.geometry.is_valid
-    ].copy()
-
-    # 用大地测量法计算面积（平方米），无需 CRS 转换，不产生 warning
-    gdf_dissolved["geometry_area"] = gdf_dissolved.geometry.apply(_geodesic_area)
-    gdf_plot = gdf_dissolved[gdf_dissolved["geometry_area"] > area_threshold].copy()
-
-    print(f"合并后地块数：{len(gdf_plot)}")
-    print("最终绘图类别：")
-    print(gdf_plot["plot_category"].value_counts())
 
     # 分配颜色
     categories = sorted(gdf_plot["plot_category"].unique())
